@@ -25,21 +25,21 @@ from typing import Dict, Any
 import asyncio
 import time
 
-async def aaa():
+async def aaa() -> list[int]:
     await asyncio.sleep(1)
     return [1,2,3]
-async def bbb():
+async def bbb() -> Dict[str, str]:
     await asyncio.sleep(2)
     return {'status': 'valera'}
-async def ccc():
+async def ccc() -> str:
     await asyncio.sleep(3)
     return 'ready!'
 
 async def ddd() -> Dict[str, Any]:
     result1, result2, result3 = await asyncio.gather(
         aaa(),
-        aaa(),
-        aaa(),
+        bbb(),
+        ccc(),
     )
     return {
         'service1': result1,
@@ -48,7 +48,10 @@ async def ddd() -> Dict[str, Any]:
     }
 
 start = time.time()
-asyncio.run(aaa())
+result = asyncio.run(ddd())
 end = time.time()
-
-print('общее время:', start - end)
+print('общее время: ', end - start)
+for key in result:
+    print(key)
+    print(result[key])
+    print()
