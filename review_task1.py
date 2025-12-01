@@ -7,7 +7,7 @@
 Функция должна возвращать валидированные данные или выбрасывать исключение
 """
 
-from typing import List, Optional, Any, Dict
+from typing import Optional, Any
 from pydantic import BaseModel,EmailStr
 
 """
@@ -26,7 +26,7 @@ class User(BaseModel):
     age: int
     email: EmailStr
 
-def validate(data: Dict[str, Any]) -> User:
+def validate(data: dict[str, Any]) -> User:
     # получаем значения
     name = data.get('name')
     age = data.get('age')
@@ -43,12 +43,13 @@ def validate(data: Dict[str, Any]) -> User:
     data['age'] = int(age)
     return User(**data)
 
-name = input('enter name: ')
-age = input('enter age: ')
-email = input('enter email: ')
-data ={
-    'name': name,
-    'age': age,
-    'email': email
-}
-print(validate(data))
+if __name__ == '__main__':
+    name = input('enter name: ')
+    age = input('enter age: ')
+    email = input('enter email: ')
+    data ={
+        'name': name,
+        'age': age,
+        'email': email
+    }
+    print(validate(data))
