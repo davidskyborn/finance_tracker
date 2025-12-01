@@ -1,6 +1,8 @@
 # задача номер 3. контекстный менеджер
 
 import time
+from curses.ascii import isupper
+
 
 class Timer:
     def __enter__(self):
@@ -10,3 +12,10 @@ class Timer:
     def __exit__(self, exc_type, exc, tb):
         end = time.time()
         print("время выполнения: ", end - self.start)
+
+
+with Timer():
+    time.sleep(2)
+
+
+    
