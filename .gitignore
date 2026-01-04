@@ -4,9 +4,10 @@ __pycache__/
 .mypy_cache/
 .pytest_cache/
 Sprint1_tasks/
-app/decoratos.py
-app/routes/test.py
-app/routes/test2.py
+my/decoratos.py
+my/test.py
+my/test2.py
+my
 *.pyc
 
 
