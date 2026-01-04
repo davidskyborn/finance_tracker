@@ -26,17 +26,16 @@ from starlette import status
 # создаем обьект приложения
 app = FastAPI()
 # создаем первый эндпоинт (домашняя страница), и даем ему логику
+# этот эндпоинт оказывается нам не нужен поэтому мы его спрячем
+# @app.get("/")
+# def home() -> dict[str, str]:
+#     return {"message": "Finance Tracker API"}
 
 
-@app.get("/")
-def home() -> dict[str, str]:
-    return {"message": "Finance Tracker API"}
-
-
-# создаем второй эндпоинт (по адресу /health) и даем ему логику
-@app.get("/health")
-def healthcheck() -> dict[str, str]:
-    return {"status": "ok"}
+# # создаем второй эндпоинт (по адресу /health) и даем ему логику
+# @app.get("/health")
+# def healthcheck() -> dict[str, str]:
+#     return {"status": "ok"}
 
 
 app.include_router(wallets_router)

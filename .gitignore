@@ -3,4 +3,11 @@ __pycache__/
 .venv/
 .mypy_cache/
 .pytest_cache/
+Sprint1_tasks/
+app/decoratos.py
+app/routes/test.py
+app/routes/test2.py
 *.pyc
+
+
+
