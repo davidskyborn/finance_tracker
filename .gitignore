@@ -3,11 +3,8 @@ __pycache__/
 .venv/
 .mypy_cache/
 .pytest_cache/
-Sprint1_tasks/
-my/decoratos.py
-my/test.py
-my/test2.py
 my
+.DS_Store
 *.pyc
 
 

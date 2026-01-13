@@ -1,7 +1,7 @@
 # создаем скрипт запуска кода для БД
 
 import asyncio
-from app.database import create_tables
+from database.database import create_tables
 
 
 def main() -> None:

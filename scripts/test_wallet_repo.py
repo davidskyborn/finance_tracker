@@ -1,6 +1,6 @@
 import asyncio
 
-from app.database import engine
+from database.database import engine
 from app.repositories.wallet_repository import (
     create_wallets_batch,
     search_wallets,
